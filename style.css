@@ -1,0 +1,10 @@
+body {
+    position: relative;
+}
+.container {
+  margin-top:4rem;
+}
+.topics {
+  margin: 2rem;
+  padding-top: 4rem;
+}
