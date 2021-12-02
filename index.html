@@ -88,6 +88,7 @@
       <div class="row">
       <div class="col">
         <img src="assets/TUDublin_Colour_RGB.jpg" alt="TUDLogo" class="img-thumbnail">
+        <p>College College College CollegeCollegeCollegeCollegeCollegeCollegeCollegeCollegeCollegeCollege CollegeCollege College College</p>
       </div>
       </div>
     </section>
@@ -423,6 +424,7 @@
       <h4 >Contact me</h4>
       <div class="row align-items-start">
         <div class="col">
+          <div id="liveAlertPlaceholder"></div>
           <div >
             <label for="contactEmailInput" class="form-label">Email Address</label>
             <input id="emailInput" type="email" class="form-control" value="">
@@ -436,7 +438,7 @@
             <textarea id="messageInput" type="text" class="form-control" value=""></textarea>
           </div>
           <div class="g-recaptcha" data-sitekey="6Lfa4msdAAAAAJSJwXprOqy4aBe5PfZoQIU1ptTQ"></div>
-          <button class="btn btn-primary" type="button" onclick="sendContact()">Send</button>
+          <button class="btn btn-primary" type="button" id="liveAlertBtn" onclick="alert('message has been sent', 'success')">Send</button>
         </div>
         <div class="col">
           <a href="https://www.linkedin.com/in/sean-o-riordain/"><i class="bi bi-linkedin"></i></a>
