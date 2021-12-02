@@ -7,4 +7,10 @@ function sendContact() {
   document.getElementById('subjectInput').value= "";
   document.getElementById('messageInput').value= "";
 
+  
 }
+
+var myModalEl = document.getElementById('portfolio1')
+myModalEl.addEventListener('hidden.bs.modal', function (event) {
+  // do something...
+})
