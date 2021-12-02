@@ -10,7 +10,12 @@ function sendContact() {
   
 }
 
-var myModalEl = document.getElementById('portfolio1')
-myModalEl.addEventListener('hidden.bs.modal', function (event) {
-  // do something...
-})
+function portfolioModalNext() {
+  console.log("dfsd")
+  $('.close').click(function(){
+    if ($('.one').is(':checked'))
+    {
+      $("#portfolio1").modal('toggle');
+    }
+  })
+}
