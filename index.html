@@ -15,8 +15,8 @@
   
  <body data-spy="scroll" data-target="#navbar-example2">
 
-  <div class="container">
-    <nav id="navbar" class="navbar navbar-light bg-light px-3 fixed-top">
+  <div class="sidebar">
+    <nav id="navbar" class="navbar navbar-light bg-light px-3">
       <a class="navbar-brand" href="#">Sean O Riordain</a>
       
       <ul class="nav nav-pills">  
@@ -46,40 +46,41 @@
     </nav>
   </div>
 
-
-  <div data-spy="scroll" data-target="#navbar" data-offset="0" >
+  <div class="content" data-spy="scroll" data-target="#navbar" data-offset="0" >
     <div id="splash">
       <div class="card mb-3">
         <img src="assets/Splash.jpg" class="card-img-top" id="SplashScreen">
         <div class="card-img-overlay align-items-center d-flex justify-content-center">
-            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        
-            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <h1>Sean O Riordain</h1>
+            <h2>Software Developer/ Student/ Photogrpaher</h2>
+            <button>Contact Me</button>
+            <button>Download.CV</button>
         </div>
       </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
     
     <section id="aboutMe" class="topics">
       <h4 >About me</h4>
 
-      <img src="./assets/img_avatar.png">
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
-        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <div class="row">
+        <div class="col">
+          <img src="./assets/img_avatar.png">
+        </div>
+        <div class="col">
+          <h2>Sean O Riordain</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
-        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    </section>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+      </div>    
+      </section>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <section id="education" class="topics">
@@ -92,146 +93,246 @@
          <p>dsdsdhjkaaaaaaaaaaa</p> 
       </div>
       <div class="col">  
-        <div class="accordion" id="accordionExample">
+        <div class="accordion" id="CollegeResults">
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Accordion Item #1
+            <h2 class="accordion-header" id="fourthYear">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourth" aria-expanded="false" aria-controls="collapseFourth">
+               Fourth Year Results
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="collapseFourth" class="accordion-collapse collapse" aria-labelledby="fourthYear" data-bs-parent="#Collegeresults">
               <div class="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <ul class="list-group list-group-flush ">
+                  <li class="list-group-item">IMD</li>
+                  <li class="list-group-item">EPA</li>
+                  <li class="list-group-item">EAD</li>
+                  <li class="list-group-item">IM</li>
+                  <li class="list-group-item">SEc</li>
+                  <li class="list-group-item">Comp Theory</li>
+                  <li class="list-group-item">Algorithims</li>
+                  <li class="list-group-item">Cloud</li>
+                  <li class="list-group-item">Project</li>
+                  <li class="list-group-item">EAD 2</li>
+                  <li class="list-group-item">A third item</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="thirdYear">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThird" aria-expanded="false" aria-controls="collapseThird">
+                Third Year Results
+              </button>
+            </h2>
+            <div id="collapseThird" class="accordion-collapse collapse" aria-labelledby="thirdYear" data-bs-parent="#Collegeresults">
+              <div class="accordion-body">
+                <ul class="list-group list-group-flush ">
+                  <li class="list-group-item">IMD</li>
+                  <li class="list-group-item">EPA</li>
+                  <li class="list-group-item">EAD</li>
+                  <li class="list-group-item">IM</li>
+                  <li class="list-group-item">SEc</li>
+                  <li class="list-group-item">Comp Theory</li>
+                  <li class="list-group-item">Algorithims</li>
+                  <li class="list-group-item">Cloud</li>
+                  <li class="list-group-item">Project</li>
+                  <li class="list-group-item">EAD 2</li>
+                  <li class="list-group-item">A third item</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
               </div>
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Accordion Item #2
+            <h2 class="accordion-header" id="secondYear">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecond" aria-expanded="false" aria-controls="collapseSecond">
+                Second Year
               </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div id="collapseSecond" class="accordion-collapse collapse" aria-labelledby="secondYear" data-bs-parent="#Collegeresults">
               <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <ul class="list-group list-group-flush ">
+                  <li class="list-group-item">IMD</li>
+                  <li class="list-group-item">EPA</li>
+                  <li class="list-group-item">EAD</li>
+                  <li class="list-group-item">IM</li>
+                  <li class="list-group-item">SEc</li>
+                  <li class="list-group-item">Comp Theory</li>
+                  <li class="list-group-item">Algorithims</li>
+                  <li class="list-group-item">Cloud</li>
+                  <li class="list-group-item">Project</li>
+                  <li class="list-group-item">EAD 2</li>
+                  <li class="list-group-item">A third item</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
               </div>
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Accordion Item #3
+            <h2 class="accordion-header" id="firstYear">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFirst" aria-expanded="false" aria-controls="collapseFirst">
+                First Year
               </button>
             </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div id="collapseFirst" class="accordion-collapse collapse" aria-labelledby="firstYear" data-bs-parent="#Collegeresults">
               <div class="accordion-body">
-                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">IMD</li>
+                  <li class="list-group-item">EPA</li>
+                  <li class="list-group-item">EAD</li>
+                  <li class="list-group-item">IM</li>
+                  <li class="list-group-item">SEc</li>
+                  <li class="list-group-item">Comp Theory</li>
+                  <li class="list-group-item">Algorithims</li>
+                  <li class="list-group-item">Cloud</li>
+                  <li class="list-group-item">Project</li>
+                  <li class="list-group-item">EAD 2</li>
+                  <li class="list-group-item">A third item</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="row">
+      <div class="col">
+        <img src="assets/ColChill.jpg" alt="TUDLogo" class="img-thumbnail">
       </div>
-      <div class="row">
-        <div class="col">
-          <img src="assets/ColChill.jpg" alt="TUDLogo" class="img-thumbnail">
-        </div>
-        <div class="col">
+      <div class="col">
            <p>dsdsdhjkaaaaaaaaaaa</p> 
         </div>
         <div class="col">  
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="secondaryResults">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Accordion Item #1
+              <h2 class="accordion-header" id="LevingResults">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeaving" aria-expanded="false" aria-controls="collapseLeaving">
+                  Leaving Certificate
                 </button>
               </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div id="collapseLeaving" class="accordion-collapse collapse" aria-labelledby="LeavingResults" data-bs-parent="#secondaryResults">
                 <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">IMD</li>
+                    <li class="list-group-item">EPA</li>
+                    <li class="list-group-item">EAD</li>
+                    <li class="list-group-item">IM</li>
+                    <li class="list-group-item">SEc</li>
+                    <li class="list-group-item">Comp Theory</li>
+                    <li class="list-group-item">Algorithims</li>
+                    <li class="list-group-item">Cloud</li>
+                    <li class="list-group-item">Project</li>
+                    <li class="list-group-item">EAD 2</li>
+                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">A third item</li>
+                  </ul>
                 </div>
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Accordion Item #2
+              <h2 class="accordion-header" id="JuniorResults">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJunior" aria-expanded="false" aria-controls="collapseJunior">
+                  Junior Certificate
                 </button>
               </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div id="collapseJunior" class="accordion-collapse collapse" aria-labelledby="JuniorResults" data-bs-parent="#secondaryResults">
                 <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Accordion Item #3
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">IMD</li>
+                    <li class="list-group-item">EPA</li>
+                    <li class="list-group-item">EAD</li>
+                    <li class="list-group-item">IM</li>
+                    <li class="list-group-item">SEc</li>
+                    <li class="list-group-item">Comp Theory</li>
+                    <li class="list-group-item">Algorithims</li>
+                    <li class="list-group-item">Cloud</li>
+                    <li class="list-group-item">Project</li>
+                    <li class="list-group-item">EAD 2</li>
+                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">A third item</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </section>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <section id="workExp" class="topics">
       <h4 >Work Experience</h4>
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <ul class="nav nav-tabs" id="workExpTabs" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home 2020-2021</button>
+          <button class="nav-link active" id="fidelity-tab" data-bs-toggle="tab" data-bs-target="#fidelity" type="button" role="tab" aria-controls="fidelity" aria-selected="true">Fidelity Investments January 2021-Present</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+          <button class="nav-link" id="supervalu-tab" data-bs-toggle="tab" data-bs-target="#supervalu" type="button" role="tab" aria-controls="supervalu" aria-selected="false">SuperValu July 2019 - December 2020</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+          <button class="nav-link" id="burgerKing-tab" data-bs-toggle="tab" data-bs-target="#burgerKing" type="button" role="tab" aria-controls="burgerKing" aria-selected="false">AppleGreen July 2018 - July 2019</button>
         </li>
       </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+      <div class="tab-content" id="workExpTabContent">
+        <div class="tab-pane fade show active" id="fidelity" role="tabpanel" aria-labelledby="fidelity-tab">
+          <img src="./assets/fidelity-logo-jpg.jpg" alt="Fidelity">
+        </div>
+        <div class="tab-pane fade" id="supervalu" role="tabpanel" aria-labelledby="supervalu-tab">
+          <img src="./assets/Supervalu.png" alt="supervalu">
+        </div>
+        <div class="tab-pane fade" id="burgerKing" role="tabpanel" aria-labelledby="burgerKing-tab">
+          <img src="./assets/burger_king.jpg" alt="burger_king">
+        </div>
       </div>
     </section>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <section id="portfolio" class="topics">
       <h4 >Portfolio</h4>
       
         <div class="row">
-          <div class="col-md-6">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="assets/SplashScreen.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Year 4</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolio1">
-              Final Year Project
-              </button>
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="assets/SplashScreen.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Year 4 Project</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolio1">
+                Final Year Project
+                </button>
+              </div>
             </div>
           </div>
-          </div>
-          <div class="col-md-6">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="assets/SplashScreen.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Year 2</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolio2">
-                Second Year Project
-              </button>
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="assets/SplashScreen.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Social Media Project</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolio2">
+                  Second Year Project
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="assets/SplashScreen.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Shaving Products Store</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolio2">
+                  Second Year Project
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 <!-- Modal -->
       <div class="modal fade" id="portfolio1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -506,13 +607,13 @@
           <button class="btn btn-primary" type="button" id="liveAlertBtn" onclick="alert('message has been sent', 'success')">Send</button>
         </div>
         <div class="col">
-          <a href="https://www.linkedin.com/in/sean-o-riordain/"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.instagram.com/seanoriordain18/"><i class="bi bi-instagram"></i></a>
-          <a href="https://twitter.com/seanmoriordain"><i class="bi bi-twitter"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=100010043568744"><i class="bi bi-facebook"></i></a>
-          <a href="https://github.com/sean-o-riordain"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/sean-o-riordain/" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.instagram.com/seanoriordain18/" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://twitter.com/seanmoriordain" target="_blank"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100010043568744" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://github.com/sean-o-riordain" target="_blank"><i class="bi bi-github"></i></a>
           <br><br>
-          <p>Email: <a href="mailto:seanoriordain002@gmail.com">seanoriordain002@gmail.com<a>   <a href="mailto:seanoriordain002@gmail.com"><i class="bi bi-envelope"></i></a></p>
+          <p>Email: <a href="mailto:seanoriordain002@gmail.com" target="_blank">seanoriordain002@gmail.com<a>   <a href="mailto:seanoriordain002@gmail.com"><i class="bi bi-envelope"></i></a></p>
           <p>Address: <br> 13 FakeStreet Grove, <br> Tallaght, <br> Dublin 24</p>
           <p>Tel: 01 345 6789</p>
          
@@ -522,7 +623,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
    
 
-    </div>
+  </div>
   </body>
 </html>
 <!-- Modal, Carousel, Thumbnails-->
