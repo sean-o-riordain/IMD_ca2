@@ -114,3 +114,28 @@ function Time() {
   }
  }
  Time();
+
+ function Age() {
+  var birthdate = new Date(2000, 0, 14);
+  var now = new Date();
+  var age = now.getFullYear() - birthdate.getFullYear();
+    var m = now.getMonth() - birthdate.getMonth();
+    if (m < 0 || (m === 0 && now.getDate() < birthdate.getDate())) {
+        age--;
+    }
+  document.getElementById("age").innerHTML= "<strong>Age:</strong> " +age;
+ }
+ Age();
+
+var option = 
+{ 
+  animation: true,
+  delay: 5000 
+};
+
+function Download() {
+  var toastHTMLElement = document.getElementById("liveToast");
+
+  var toastElement = new bootstrap.Toast( toastHTMLElement, option);
+  toastElement.show();
+}

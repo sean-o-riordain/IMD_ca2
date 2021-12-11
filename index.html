@@ -13,7 +13,7 @@
     
   </head>
   
- <body data-spy="scroll" data-target="#navbar-example2">
+  <body data-spy="scroll" data-target="#navbar-example2">
 
   <div class="sidebar">
     <header>
@@ -21,9 +21,6 @@
     </header>
     <nav id="navbar" class="navbar navbar-light bg-light px-3">
       <ul class="nav nav-pills">
-        <li class="nav-item w-100">
-          <a class="nav-link" href="#splash">Home</a>
-        </li> 
         <li class="nav-item w-100">
           <a class="nav-link" href="#aboutMe">About me</a>
         </li>
@@ -48,6 +45,7 @@
       </ul>
 
     </nav>
+      <a class="nav-link" target="_blank" href="./bootstrapUsed.html"><h6>BootStrap Used</h6></a>
   </div>
 
   <div class="content" data-spy="scroll" data-target="#navbar" data-offset="0" >
@@ -70,7 +68,7 @@
                   <a href="https://github.com/sean-o-riordain" target="_blank"><i class="bi bi-github"></i></a>
                 <br><br><br>
                 <div  id="splashButton" class="row justify-content-center">
-                  <button type="button" class="btn btn-dark">Download.CV</button>
+                  <button type="button" class="btn btn-dark " onclick="Download()"><a href="SeanORiordain_CV.docx" download class="text-decoration-none text-white">Download CV</a></button>
                   <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#contactMeModal">Contact Me</button>
                 </div>
               </div>
@@ -79,42 +77,56 @@
         </div>
       </div>
     </div>
-    <!--modal for contact me-->
-    <div class="modal fade" id="contactMeModal" tabindex="-1" aria-labelledby="contactmemodal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Contact Me</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="col">
-              <div id="liveAlertPlaceholder"></div>
-              <div >
-                <label for="contactEmailInput" class="form-label">Email Address</label>
-                <input id="emailInput" type="email" class="form-control" value="">
+         <!--Toast-->
+         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+          <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              
+              <strong class="me-auto">Download</strong>
+              <small>2 mins to go</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
               </div>
-              <div >
-                <label for="contactSubjectInput" class="form-label">Subject</label>
-                <input id="subjectInput" type="textarea" class="form-control" value="">
-              </div>
-              <div >
-                <label for="contactMessageInput" class="form-label">Message</label>
-                <textarea id="messageInput" type="text" class="form-control" value=""></textarea>
-              </div>
-              <div class="g-recaptcha" data-sitekey="6Lfa4msdAAAAAJSJwXprOqy4aBe5PfZoQIU1ptTQ"></div>
-              <button class="btn btn-primary" type="button" id="liveAlertBtn" onclick="alert('message has been sent', 'success')">Send</button>
             </div>
           </div>
-          </div>
         </div>
-    </div>
-  
-
+        <!--modal for contact me-->
+        <div class="modal fade" id="contactMeModal" tabindex="-1" aria-labelledby="contactmemodal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Contact Me</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="col">
+                  <div id="liveAlertPlaceholder"></div>
+                  <div >
+                    <label for="contactEmailInput" class="form-label">Email Address</label>
+                    <input id="emailInput" type="email" class="form-control" value="">
+                  </div>
+                  <div >
+                    <label for="contactSubjectInput" class="form-label">Subject</label>
+                    <input id="subjectInput" type="textarea" class="form-control" value="">
+                  </div>
+                  <div >
+                    <label for="contactMessageInput" class="form-label">Message</label>
+                    <textarea id="messageInput" type="text" class="form-control" value=""></textarea>
+                  </div>
+                  <div class="g-recaptcha" data-sitekey="6Lfa4msdAAAAAJSJwXprOqy4aBe5PfZoQIU1ptTQ"></div>
+                  <button class="btn btn-primary" type="button" id="liveAlertBtn" onclick="alert('message has been sent', 'success')">Send</button>
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
     <br><br><br><br><br><br><br><br>
     
     <section id="aboutMe" class="topics">
-      <h1 >About me</h1>
+      <h1>About me</h1>
 
       <div class="row">
         <div class="col">
@@ -144,10 +156,10 @@
           </div>            
           <div class="col">
             <ul>
-              <li><strong>Age</strong>: 21</li>
+              <li><div id="age"></div></li>
               <li><strong>Phone</strong>: 01 345 6789</li>
               <li><strong>Degree</strong>: Bachelor of Science (Honours) in Computing with Software Development</li>
-              <li><div id="yourTime" class="inline"></div></li>
+              <li><div id="yourTime"></div></li>
             </ul>
           </div> 
         </div>
@@ -157,184 +169,188 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <section id="education" class="topics">
-      <h4 >Education</h4>
-      <div class="row">
-      <div class="col">
-        <img src="assets/TUDublin_Colour_RGB.jpg" alt="TUDLogo" class="img-thumbnail">
-      </div>
-      <div class="col">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2384.9136084328593!2d-6.365643784010556!3d53.29108258655004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670b4b8ec071f5%3A0xb6cf7501e0d9522a!2sTU%20Dublin%2C%20Tallaght!5e0!3m2!1sen!2sie!4v1639179677259!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-         <p>dsdsdhjkaaaaaaaaaaa</p> 
-      </div>
-      <div class="col">  
-        <div class="accordion" id="CollegeResults">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="fourthYear">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourth" aria-expanded="false" aria-controls="collapseFourth">
-               Fourth Year Results
-              </button>
-            </h2>
-            <div id="collapseFourth" class="accordion-collapse collapse" aria-labelledby="fourthYear" data-bs-parent="#Collegeresults">
-              <div class="accordion-body">
-                <ul class="list-group list-group-flush ">
-                  <li class="list-group-item">IMD</li>
-                  <li class="list-group-item">EPA</li>
-                  <li class="list-group-item">EAD</li>
-                  <li class="list-group-item">IM</li>
-                  <li class="list-group-item">SEc</li>
-                  <li class="list-group-item">Comp Theory</li>
-                  <li class="list-group-item">Algorithims</li>
-                  <li class="list-group-item">Cloud</li>
-                  <li class="list-group-item">Project</li>
-                  <li class="list-group-item">EAD 2</li>
-                  <li class="list-group-item">A third item</li>
-                  <li class="list-group-item">A third item</li>
-                </ul>
-              </div>
-            </div>
+      <h2 >Education</h2>
+      <ul class="nav nav-tabs" id="workExpTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="college-tab" data-bs-toggle="tab" data-bs-target="#college" type="button" role="tab" aria-controls="college" aria-selected="true">Third Level</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="secondary-tab" data-bs-toggle="tab" data-bs-target="#secondaryT" type="button" role="tab" aria-controls="secondaryT" aria-selected="false">Secondary School</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="educationTabContent">
+        <div class="tab-pane fade show active" id="college" role="tabpanel" aria-labelledby="college-tab">
+          <div class="row border-top border-dark border-end border-start" id="thirdLevel">
+          <div class="col">
+            <a target="_blank" href="https://www.tudublin.ie/explore/our-campuses/tallaght/"><img src="assets/TUDublin_Colour_RGB.jpg" alt="TUDLogo" class="img-thumbnail"></a>
           </div>
+          <div class="col">
+          
+            <h3><strong>TU Dublin - Tallaght Campus</strong></h3> <h4>- Third Level Education 2018-2022</h4>
+            <h5><strong>Overall GPA: 3.71</strong></h5>
+            <p>TU Dublin - Tallaght Campus is where I decided to get my college Education. Located in Tallaght it's a wonderful college full of fantastic students and staff.</p>
+            <p>During my time at TUD I was involved in many societies, most noteably the Drama Society.</p>
+          </div>
+          <div class="col">  
+            <div class="accordion" id="CollegeResults">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fourthYear">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourth" aria-expanded="false" aria-controls="collapseFourth">
+                  <strong>Fourth Year Results - GPA N/A</strong>
+                  </button>
+                </h2>
+                <div id="collapseFourth" class="accordion-collapse collapse" aria-labelledby="fourthYear" data-bs-parent="#Collegeresults">
+                  <div class="accordion-body">
+                    <ul class="list-group list-group-flush ">
+                      <li class="list-group-item">Interactive Media Design & Visualisation <strong>Result: N/A</strong></li>
+                      <li class="list-group-item">Enterprise Performance Architecture <strong>Result: N/A</strong></li>
+                      <li class="list-group-item">Enterprise Applications Development 1 <strong>Result: N/A</strong></li>
+                      <li class="list-group-item">Information Management <strong>Result: N/A</strong></li>
+                      <li class="list-group-item">Security for Cloud and the Internet of Things <strong>Result: N/A</strong></li>
+                      <li class="list-group-item">Project <strong>Result: N/A</strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="thirdYear">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThird" aria-expanded="false" aria-controls="collapseThird">
-                Third Year Results
-              </button>
-            </h2>
-            <div id="collapseThird" class="accordion-collapse collapse" aria-labelledby="thirdYear" data-bs-parent="#Collegeresults">
-              <div class="accordion-body">
-                <ul class="list-group list-group-flush ">
-                  <li class="list-group-item">IMD</li>
-                  <li class="list-group-item">EPA</li>
-                  <li class="list-group-item">EAD</li>
-                  <li class="list-group-item">IM</li>
-                  <li class="list-group-item">SEc</li>
-                  <li class="list-group-item">Comp Theory</li>
-                  <li class="list-group-item">Algorithims</li>
-                  <li class="list-group-item">Cloud</li>
-                  <li class="list-group-item">Project</li>
-                  <li class="list-group-item">EAD 2</li>
-                  <li class="list-group-item">A third item</li>
-                  <li class="list-group-item">A third item</li>
-                </ul>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="thirdYear">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThird" aria-expanded="false" aria-controls="collapseThird">
+                    <strong>Third Year Results GPA - 3.67</strong>
+                  </button>
+                </h2>
+                <div id="collapseThird" class="accordion-collapse collapse" aria-labelledby="thirdYear" data-bs-parent="#Collegeresults">
+                  <div class="accordion-body">
+                    <ul class="list-group list-group-flush ">
+                      <li class="list-group-item">Cloud Services & Distributed Computing <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Data Structures and Algorithms <strong>Result: A</strong></li>
+                      <li class="list-group-item">Server-Side Web Development <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Server-Side Web Development <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Big Data Technologies <strong>Result: A</strong></li>
+                      <li class="list-group-item">Operating Systems <strong>Result:A</strong></li>
+                      <li class="list-group-item">Innovation and entrepreneurship <strong>Result: B</strong></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="secondYear">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecond" aria-expanded="false" aria-controls="collapseSecond">
-                Second Year
-              </button>
-            </h2>
-            <div id="collapseSecond" class="accordion-collapse collapse" aria-labelledby="secondYear" data-bs-parent="#Collegeresults">
-              <div class="accordion-body">
-                <ul class="list-group list-group-flush ">
-                  <li class="list-group-item">IMD</li>
-                  <li class="list-group-item">EPA</li>
-                  <li class="list-group-item">EAD</li>
-                  <li class="list-group-item">IM</li>
-                  <li class="list-group-item">SEc</li>
-                  <li class="list-group-item">Comp Theory</li>
-                  <li class="list-group-item">Algorithims</li>
-                  <li class="list-group-item">Cloud</li>
-                  <li class="list-group-item">Project</li>
-                  <li class="list-group-item">EAD 2</li>
-                  <li class="list-group-item">A third item</li>
-                  <li class="list-group-item">A third item</li>
-                </ul>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="secondYear">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecond" aria-expanded="false" aria-controls="collapseSecond">
+                    <strong>Second Year GPA - 3.79</strong>
+                  </button>
+                </h2>
+                <div id="collapseSecond" class="accordion-collapse collapse" aria-labelledby="secondYear" data-bs-parent="#Collegeresults">
+                  <div class="accordion-body">
+                    <ul class="list-group list-group-flush ">
+                      <li class="list-group-item">Advanced Database technologies <strong>Result: A</strong></li>
+                      <li class="list-group-item">Discrete Mathematics 2 <strong>Result: A</strong></li>
+                      <li class="list-group-item">Network Fundamentals <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Software Quality Assurance and Testing <strong>Result: A</strong></li>
+                      <li class="list-group-item">Software Development 3 <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Client-side Web Development <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Software Development 4  <strong>Result: A</strong></li>
+                      <li class="list-group-item">Information Security <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Network Routing and Switching Fundamentals <strong>Result: A</strong></li>
+                      <li class="list-group-item">Management Science <strong>Result: A</strong></li>
+                      <li class="list-group-item">Database Analysis and Administration <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Year 2 Project <strong>Result: A</strong></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="firstYear">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFirst" aria-expanded="false" aria-controls="collapseFirst">
-                First Year
-              </button>
-            </h2>
-            <div id="collapseFirst" class="accordion-collapse collapse" aria-labelledby="firstYear" data-bs-parent="#Collegeresults">
-              <div class="accordion-body">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">IMD</li>
-                  <li class="list-group-item">EPA</li>
-                  <li class="list-group-item">EAD</li>
-                  <li class="list-group-item">IM</li>
-                  <li class="list-group-item">SEc</li>
-                  <li class="list-group-item">Comp Theory</li>
-                  <li class="list-group-item">Algorithims</li>
-                  <li class="list-group-item">Cloud</li>
-                  <li class="list-group-item">Project</li>
-                  <li class="list-group-item">EAD 2</li>
-                  <li class="list-group-item">A third item</li>
-                  <li class="list-group-item">A third item</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <br><br><br>
-
-    <div class="row">
-      <div class="col">
-        <img src="assets/ColChill.jpg" alt="TUDLogo" class="img-thumbnail">
-      </div>
-      <div class="col">
-           <p>dsdsdhjkaaaaaaaaaaa</p>
-           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2383.109556427176!2d-6.4044917840097!3d53.323391684131245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48677341c1b79771%3A0xfd4c1e008e64c9f8!2sCol%C3%A1iste%20Chilliain!5e0!3m2!1sen!2sie!4v1639179701938!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="col">  
-          <div class="accordion" id="secondaryResults">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="LevingResults">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeaving" aria-expanded="false" aria-controls="collapseLeaving">
-                  Leaving Certificate
-                </button>
-              </h2>
-              <div id="collapseLeaving" class="accordion-collapse collapse" aria-labelledby="LeavingResults" data-bs-parent="#secondaryResults">
-                <div class="accordion-body">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">IMD</li>
-                    <li class="list-group-item">EPA</li>
-                    <li class="list-group-item">EAD</li>
-                    <li class="list-group-item">IM</li>
-                    <li class="list-group-item">SEc</li>
-                    <li class="list-group-item">Comp Theory</li>
-                    <li class="list-group-item">Algorithims</li>
-                    <li class="list-group-item">Cloud</li>
-                    <li class="list-group-item">Project</li>
-                    <li class="list-group-item">EAD 2</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A third item</li>
-                  </ul>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="firstYear">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFirst" aria-expanded="false" aria-controls="collapseFirst">
+                    <strong>First Year GPA - 3.67</strong>
+                  </button>
+                </h2>
+                <div id="collapseFirst" class="accordion-collapse collapse" aria-labelledby="firstYear" data-bs-parent="#Collegeresults">
+                  <div class="accordion-body">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Computer Architecture <strong>Result: B+</strong> </li>
+                      <li class="list-group-item">Critical Skills Development <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Business & Information Systems <strong>Result: A</strong></li>
+                      <li class="list-group-item">Discrete Mathematics 1 <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Software Development 1 <strong>Result: A</strong></li>
+                      <li class="list-group-item">Visual Design and User experience <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Social Media Communications <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Database Fundamentals <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Operating Systems Fundamentals <strong>Result: B+</strong></li>
+                      <li class="list-group-item">Statistics <strong>Result: A</strong></li>
+                      <li class="list-group-item">Software Development 2 <strong>Result: A</strong></li>
+                      <li class="list-group-item">Object Orientated Systems Analysis <strong>Result: B+</strong></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="JuniorResults">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJunior" aria-expanded="false" aria-controls="collapseJunior">
-                  Junior Certificate
-                </button>
-              </h2>
-              <div id="collapseJunior" class="accordion-collapse collapse" aria-labelledby="JuniorResults" data-bs-parent="#secondaryResults">
-                <div class="accordion-body">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">IMD</li>
-                    <li class="list-group-item">EPA</li>
-                    <li class="list-group-item">EAD</li>
-                    <li class="list-group-item">IM</li>
-                    <li class="list-group-item">SEc</li>
-                    <li class="list-group-item">Comp Theory</li>
-                    <li class="list-group-item">Algorithims</li>
-                    <li class="list-group-item">Cloud</li>
-                    <li class="list-group-item">Project</li>
-                    <li class="list-group-item">EAD 2</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A third item</li>
-                  </ul>
+          </div>
+          </div>
+          <div class="row border-bottom border-dark border-end border-start">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2384.9136084328593!2d-6.365643784010556!3d53.29108258655004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670b4b8ec071f5%3A0xb6cf7501e0d9522a!2sTU%20Dublin%2C%20Tallaght!5e0!3m2!1sen!2sie!4v1639179677259!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="secondaryT" role="tabpanel" aria-labelledby="secondary-tab">
+          <div class="row border-top border-dark border-end border-start" id="secondary">
+            <div class="col">
+              <a target="_blank" href="https://www.colaistechilliain.ie/"><img src="assets/ColChill.jpg" alt="TUDLogo" class="img-thumbnail"></a>
+            </div>
+            <div class="col">
+                <h3><strong>Coláiste Chilliain</strong> </h3><h4>- Secondary School 2012-2018</h4>
+                <p>Coláiste Chilliain is an all Irish School located in the heart of Clondalkin.</p>
+                <p>During my time attending Coláiste Chilliain I was involved in many activities such as coding club and being class captain for the duration of my secondary school education</p>
+                
+              </div>
+              <div class="col">  
+                <div class="accordion" id="secondaryResults">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="LevingResults">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeaving" aria-expanded="false" aria-controls="collapseLeaving">
+                        <strong>Leaving Certificate - 434 Points</strong>
+                      </button>
+                    </h2>
+                    <div id="collapseLeaving" class="accordion-collapse collapse" aria-labelledby="LeavingResults" data-bs-parent="#secondaryResults">
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">English <strong>Result: H3</strong></li>
+                          <li class="list-group-item">Irish <strong>Result: H3</strong></li>
+                          <li class="list-group-item">Maths <strong>Result: H3</strong></li>
+                          <li class="list-group-item">Buisness <strong>Result: H5</strong></li>
+                          <li class="list-group-item">Geography <strong>Result: H4</strong></li>
+                          <li class="list-group-item">Physics <strong>Result: H6</strong></li>
+                          <li class="list-group-item">German <strong>Result: H5</strong></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="JuniorResults">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJunior" aria-expanded="false" aria-controls="collapseJunior">
+                        <strong>Junior Certificate</strong>
+                      </button>
+                    </h2>
+                    <div id="collapseJunior" class="accordion-collapse collapse" aria-labelledby="JuniorResults" data-bs-parent="#secondaryResults">
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">English <strong>Result: B</strong></li>
+                          <li class="list-group-item">Irish <strong>Result: B</strong></li>
+                          <li class="list-group-item">Maths <strong>Result: B</strong></li>
+                          <li class="list-group-item">Buisness <strong>Result: C</strong></li>
+                          <li class="list-group-item">Geography <strong>Result: C</strong></li>
+                          <li class="list-group-item">Science <strong>Result: C</strong></li>
+                          <li class="list-group-item">German <strong>Result: C</strong></li>
+                          <li class="list-group-item">History <strong>Result: C</strong></li>
+                          <li class="list-group-item">Home Economics <strong>Result: C</strong></li>
+                          <li class="list-group-item">Civic, Social and Political Education <strong>Result: C</strong></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+          </div>
+          <div class="row border-bottom border-dark border-end border-start">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2383.109556427176!2d-6.4044917840097!3d53.323391684131245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48677341c1b79771%3A0xfd4c1e008e64c9f8!2sCol%C3%A1iste%20Chilliain!5e0!3m2!1sen!2sie!4v1639179701938!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
       </div>
@@ -351,151 +367,412 @@
           <button class="nav-link" id="supervalu-tab" data-bs-toggle="tab" data-bs-target="#supervalu" type="button" role="tab" aria-controls="supervalu" aria-selected="false">SuperValu July 2019 - December 2020</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="burgerKing-tab" data-bs-toggle="tab" data-bs-target="#burgerKing" type="button" role="tab" aria-controls="burgerKing" aria-selected="false">AppleGreen July 2018 - July 2019</button>
+          <button class="nav-link" id="burgerKing-tab" data-bs-toggle="tab" data-bs-target="#burgerKing" type="button" role="tab" aria-controls="burgerKing" aria-selected="false">Burger King July 2018 - July 2019</button>
         </li>
       </ul>
       <div class="tab-content" id="workExpTabContent">
         <div class="tab-pane fade show active" id="fidelity" role="tabpanel" aria-labelledby="fidelity-tab">
-          <img src="./assets/fidelity-logo-jpg.jpg" alt="Fidelity">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2384.7554182692274!2d-6.428951684010492!3d53.293916186337896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4867747d4846dd77%3A0x6160a4ba35aa496b!2sFidelity%20Investments%20Ireland!5e0!3m2!1sen!2sie!4v1639179782241!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <div class="row">
+            <div id="fidelityImg" class="col-5">
+              <a target="_blank" href="https://www.fidelityinvestments.ie/"><img src="./assets/fidelity-logo-jpg.jpg" alt="Fidelity"></a>
+            </div>
+            <div id="companyname" class="col-7">
+              <h3>Fidelity Investments - Citywest January 2021-Present</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Software Engineer Intern Enterprise Cyber Security</h4>
+              <p>Main Responsibilities include assisting in the ongoing support for Fidelities access provisioning website MyAccess while on the MyAccess Squad, using software such as dotnet and JavaScript. I also helped build a dashboard for monitoring server health for the MyAccess Website. </p>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2384.7554182692274!2d-6.428951684010492!3d53.293916186337896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4867747d4846dd77%3A0x6160a4ba35aa496b!2sFidelity%20Investments%20Ireland!5e0!3m2!1sen!2sie!4v1639179782241!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>  
+            </div>
+            <div class="col">
+              <div id="carouselFidelity" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselFidelity" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselFidelity" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselFidelity" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/SplashScreen.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/WatersideDublin.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/fidelityInside.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFidelity" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselFidelity" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            </div>  
+          </div>           
         </div>
         <div class="tab-pane fade" id="supervalu" role="tabpanel" aria-labelledby="supervalu-tab">
-          <img src="./assets/Supervalu.png" alt="supervalu">
+          <div class="row">
+            <div class="col-5">
+              <a href="https://www.facebook.com/JordansSuperValu/" target="_blank"><img src="./assets/Supervalu.png" alt="supervalu"></a>
+            </div>
+            <div id="companyname" class="col-7">
+              <h3>Jordans Supervalu - Fortunestown July 2019 - December 2020</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Retail Assistant</h4>
+              <p>Main Responsibilities include assisting with early morning deliveries to avoid down time in customer trading, delivered high levels of customer service and engaged with customers to promote repeat business, processed customer payments, maintained high standards of housekeeping.</p>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.1744341683857!2d-6.392505784010741!3d53.28641028689972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486774bf1586ee29%3A0x216398b68f70441!2sJordan&#39;s%20SuperValu%20Fortunestown!5e0!3m2!1sen!2sie!4v1639179865977!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      
+            </div>
+            <div class="col">
+              <div id="carouselSuperValu" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselSuperValu" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselSuperValu" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselSuperValu" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/superValuOutside.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/supervaluIndoors.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/svButchers.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselSuperValu" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselSuperValu" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            </div>
+          </div>
+          
+          
         </div>
         <div class="tab-pane fade" id="burgerKing" role="tabpanel" aria-labelledby="burgerKing-tab">
-          <img src="./assets/burger_king.jpg" alt="burger_king">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38169.86542471414!2d-6.523496720898451!3d53.2784891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48677698865b4e37%3A0xc2d090a5c18c70ba!2sBurger%20King!5e0!3m2!1sen!2sie!4v1639179840127!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+          <div class="row">
+            <div id="burgerKingImg" class="col-5">
+              <a href="https://www.just-eat.ie/restaurants-burger-king-applegreen-rathcoole-co-dublin" target="_blank"><img src="./assets/burger_king.jpg" alt="burger_king"></a>
+            </div>
+            <div id="companyname" class="col-7">
+              <h3>Burger King - Naas Road July 2018 - July 2019</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Food Sales Assistant</h4>
+              <p>Main responsibilities include processing customer payments, ensuring food and appliances met health and brand standards, working as a team to prepare fresh food, assisting in the nightly lock up and sanitation.</p>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38169.86542471414!2d-6.523496720898451!3d53.2784891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48677698865b4e37%3A0xc2d090a5c18c70ba!2sBurger%20King!5e0!3m2!1sen!2sie!4v1639179840127!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            
+            </div>
+            <div class="col">
+              <div id="carouselBurgerKing" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselBurgerKing" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselBurgerKing" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselBurgerKing" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/BurgerKingInside.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/burgerKing.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/bkOutside.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselBurgerKing" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselBurgerKing" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            </div>
+          </div>
+         </div>
       </div>
     </section>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <section id="portfolio" class="topics">
-      <h4 >Portfolio</h4>
+      <h4 >Projects</h4>
       
         <div class="row">
-          <div class="col">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="assets/SplashScreen.jpg" alt="Card image cap">
+          <div id="projects" class="col">
+            <div class="card" style="width: 30rem;">
+              <img class="card-img-top" src="assets/WhensTheNextBus/logo.jfif" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Year 4 Project</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolio1">
-                Final Year Project
+                <h4 class="card-title">Whens the Next Bus</h4>
+                <h5 class="card-subtitle">Realtime Bus Time Checker</h5>
+                <h5 class="card-subtitle text-black-50">Year 4 Project</h5>
+                <br>
+                <p class="card-text">A lone project done in my final year of college. 
+                  The aim was to create an app which users could use to check real time bus times, select favourite Stops,
+                  calculate fares and plan routes. Developed over the course of 4 interations throughout my final year.
+                </p>
+                <p class="card-text">
+                  <strong>Challenges Faced</strong>
+                  <ul>
+                    <li>Creating and hosting an API for my database</li>
+                    <li>Trying to manipulate data so that i could display realtime bus Information</li>
+                    <li>Adding route planning that was efficient and effective</li>
+                  </ul>
+                </p>
+
+                <p class="card-text"><strong>Technologies and Tools used:</strong> React-Native, Express, SQLite3, Google Clooud, Google Firebase</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nextBusProject">
+                Images
                 </button>
+                <a target="_blank" href="https://github.com/Computing-Project-2021/code-docs-sean-o-riordain">
+                  <button type="button" class="btn btn-secondary">
+                    Github
+                  </button>
+                  </a>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="assets/SplashScreen.jpg" alt="Card image cap">
+          <div id="projects" class="col">
+            <div class="card" style="width: 30rem;">
+              <img class="card-img-top" src="assets/Loop/Loop Dash.jpg" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Social Media Project</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolio2">
-                  Second Year Project
+                <h4 class="card-title">Loop</h4>
+                <h5 class="card-subtitle">Social Media Project</h5>
+                <h5 class="card-subtitle text-black-50">Year 2 Project</h5>
+                <br>
+                <p class="card-text">A Group Project in my fourth semester. We built a comprehensive system which used Django web framework and allowed users to sign up and make an account, start posting text, video, and photos.
+                  Developed over the course of 12 weeks in 3 sprints
+                </p>
+                <p class="card-text">
+                  <strong>Challenges Faced</strong>
+                  <ul>
+                    <li>Trying to incorporate an instant messaging system</li>
+                    <li>Adding a follower/friend system that would be adequate for our requirements</li>
+                    <li>Adding privacy functionality to users’ profiles</li>
+                  </ul>
+                </p>
+
+                <p class="card-text"><strong>Technologies and Tools used:</strong> Python, Django, HTML5, BOOTSTRAP4, CSS, JavaScript</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loopProject">
+                  Images
                 </button>
+                <a target="_blank" href="https://dev.azure.com/X00152561/Loop-2nd%20Yr-Project">
+                <button type="button" class="btn btn-secondary">
+                  Github
+                </button>
+                </a>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="assets/SplashScreen.jpg" alt="Card image cap">
+          <div id="projects" class="col">
+            <div class="card" style="width: 30rem;">
+              <img class="card-img-top" src="assets/Fresh/FreshDash.png" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Shaving Products Store</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolio2">
-                  Second Year Project
+                <h4 class="card-title">Fresh Shop</h4>
+                <h5 class="card-subtitle">Shaving Products Store</h5>
+                <h5 class="card-subtitle text-black-50">Year 2 Project</h5>
+                <br>
+                <p class="card-text">A Group Project in my third semester. We built a comprehensive shop system which used Django web framework and allowed users to sign up and make an account to buy shaving products.
+                  Developed over the course of 4 weeks in 1 sprints
+                </p>
+                <p class="card-text">
+                  <strong>Challenges Faced</strong>
+                  <ul>
+                    <li>Trying to create a responsive website that would be satisfying to use.</li>
+                    <li>Addding search functionality that would react in real time</li>
+                    <li>Adding secure payment feature</li>
+                  </ul>
+                </p>
+
+                <p class="card-text"><strong>Technologies and Tools used:</strong> Python, Django, HTML5, BOOTSTRAP4, CSS, JavaScript</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shavingProject">
+                  Images
                 </button>
+                <a target="_blank" href="https://github.com/PiotrWojciechowski-dev/FreshShop-v2.0/tree/seanbranch">
+                  <button type="button" class="btn btn-secondary">
+                    Github
+                  </button>
+                  </a>
               </div>
             </div>
           </div>
         </div>
 <!-- Modal -->
-      <div class="modal fade" id="portfolio1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div>
+      <div class="modal fade" id="nextBusProject" tabindex="-1" aria-labelledby="nextBusModal" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="nextBusModal">Whens The Next Bus?</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div id="carouselNextBus" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselNextBus" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselNextBus" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselNextBus" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselNextBus" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselNextBus" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#carouselNextBus" data-bs-slide-to="5" aria-label="Slide 6"></button>
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="assets/SplashScreen.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/WhensTheNextBus/Login.png" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="assets/SplashScreen.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/WhensTheNextBus/logInVal.png" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="assets/SplashScreen.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/WhensTheNextBus/Map.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/WhensTheNextBus/StopsList.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/WhensTheNextBus/BusTime.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/WhensTheNextBus/Routes.png" class="d-block w-100" alt="...">
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselNextBus" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselNextBus" data-bs-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
-            </div>
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <a href="#"><button type="button" class="btn btn-primary">Github</button></a>
+              <a href="https://github.com/Computing-Project-2021/code-docs-sean-o-riordain" target="_blank"><button type="button" class="btn btn-primary">Github</button></a>
             </div>
           </div>
         </div>
       </div>
-      <div class="modal fade" id="portfolio2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+      <div class="modal fade" id="loopProject" tabindex="-1" aria-labelledby="loopModal" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="loopModal">Loop Social Media</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div id="carouselLoop" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselLoop" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselLoop" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselLoop" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselLoop" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselLoop" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#carouselLoop" data-bs-slide-to="5" aria-label="Slide 6"></button>
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="assets/SplashScreen.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/Loop/Loop Dash.jpg" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="assets/SplashScreen.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/Loop/LoopHome.gif" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="assets/SplashScreen.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/Loop/LoopDash.gif" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/Loop/LoopStore.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/Loop/LoopCheckout.gif" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/Loop/LoopMessages.jpg" class="d-block w-100" alt="...">
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselLoop" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselLoop" data-bs-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <a href="#"><button type="button" class="btn btn-primary">Github</button></a>
+              <a href="https://dev.azure.com/X00152561/Loop-2nd%20Yr-Project" target="_blank"><button type="button" class="btn btn-primary">Github</button></a>
             </div>
           </div>
         </div>
+        </div>
       </div>
+      <div class="modal fade" id="shavingProject" tabindex="-1" aria-labelledby="shavingModal" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="shavingModal">Fresh Shop - Shaving Supplies Store</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="carouselShaving" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselShaving" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselShaving" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselShaving" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselShaving" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/Fresh/FreshDash.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/Fresh/FreshLog.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/Fresh/FreshSearch.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/Fresh/FreshStore.png" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselShaving" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselShaving" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a href="https://github.com/PiotrWojciechowski-dev/FreshShop-v2.0/tree/seanbranch" target="_blank"><button type="button" class="btn btn-primary">Github</button></a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
       
 
        
@@ -503,14 +780,54 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <section id="skills" class="topics">
-      <h4 >Skills</h4>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
+      <h2 >Skills</h2>
+      <ul class="nav nav-tabs" id="skillsTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="key-tab" data-bs-toggle="tab" data-bs-target="#keySkills" type="button" role="tab" aria-controls="keySkills" aria-selected="true">Key Skills</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="IT-tab" data-bs-toggle="tab" data-bs-target="#ITSkills" type="button" role="tab" aria-controls="ITSkill" aria-selected="false">IT SKills</button>
+        </li>
       </ul>
+
+      <div class="tab-content" id="workExpTabContent">
+        <div class="tab-pane fade show active" id="keySkills" role="tabpanel" aria-labelledby="key-tab">
+          <div id="keySkills"class="col">
+            <h3>Key Skills</h3>
+            <ul class="list-group list-group-flush border">
+              <li class="list-group-item d-flex justify-content-between align-items-start bg-light">
+                <div class="ms-2 me-auto">
+                <div class="fw-bold">Customer Service/Inerpersonal</div>
+                from working in retail and service industries since 16 I have developed adequate communication and interpersonal skills, also working with multiple teams within Industry, 
+                delivering projects for multiple customers.</div></li>
+              <li class="list-group-item d-flex justify-content-between align-items-start bg-secondary"><div class="ms-2 me-auto">
+                <div class="fw-bold">Teamwork</div>In addition to my teamwork in drama society, I have acquired teamwork skills working on projects and assignments in various modules throughout college as well as working on teams in various work environments.</div></li>
+              <li class="list-group-item d-flex justify-content-between align-items-start bg-light"><div class="ms-2 me-auto">
+                <div class="fw-bold">Time Management</div>I regularly complete duties within a constricted timeframe and ensure that all my college coursework is completed within the timeframe given and to a consistently high standard. As well as working within the time limits of sprints using agile.</div></li>
+              <li class="list-group-item d-flex justify-content-between align-items-start bg-secondary"><div class="ms-2 me-auto">
+                <div class="fw-bold">Stress Management</div>I have worked in very high stress environments during my time in college working on projects, working on plays, and working in part time jobs and Fidelity. This has led me to learn how to manage stress. </div></li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="ITSkills" role="tabpanel" aria-labelledby="IT-tab">
+          <h3>IT Skills</h3>
+          <ul class="list-group list-group-flush border">
+            <li class="list-group-item bg-light">Confident developer in NodeJS, Java, Python, React, cypress test framework and Django web framework</li>
+            <li class="list-group-item bg-secondary">Fair understanding of dotnet, C++ and C#</li>
+            <li class="list-group-item bg-light">Can write SQL queries to intermediate level using Oracle 11G</li>
+            <li class="list-group-item bg-secondary">Can design and create database schemas</li>
+            <li class="list-group-item bg-light">Capable of designing websites using JavaScript, CSS and HTML5</li>
+            <li class="list-group-item bg-secondary">Understanding of google cloud services</li>
+            <li class="list-group-item bg-light">Competent user of Windows and Linux Operating Systems.</li>
+            <li class="list-group-item bg-secondary">Design, Build and troubleshoot a network using routers and switches using related tools</li>
+            <li class="list-group-item bg-light">Configure routers and switches using the Cisco IOS command set</li>
+            <li class="list-group-item bg-secondary">Confident at PC construction and troubleshooting</li>
+            <li class="list-group-item bg-light">Certified Agility Health Facilitator</li>
+            <li class="list-group-item bg-secondary">Experience in using Adobe Photoshop and Lightroom</li>
+            <li class="list-group-item bg-light">Fair understanding of Tableau data Visualisation</li>
+          </ul>
+        </div>
+      </div>   
     </section>
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -691,24 +1008,36 @@
           <a href="https://www.facebook.com/profile.php?id=100010043568744" target="_blank"><i class="bi bi-facebook"></i></a>
           <a href="https://github.com/sean-o-riordain" target="_blank"><i class="bi bi-github"></i></a>
           <br><br>
-          <p>Email: <a href="mailto:seanoriordain002@gmail.com" target="_blank">seanoriordain002@gmail.com<a>   <a href="mailto:seanoriordain002@gmail.com"><i class="bi bi-envelope"></i></a></p>
-          <p>Address: Office, 7 Grafton Street, Dublin 2, D02 Y308</p>
-          <p>Tel: 01 345 6789</p>
+          <p><i class="bi bi-envelope"></i>Email: <a href="mailto:seanoriordain002@gmail.com" target="_blank">seanoriordain002@gmail.com<a>   <a href="mailto:seanoriordain002@gmail.com"></a></p>
+          <p><i class="bi bi-telephone-fill"></i>Tel: 01 345 6789</p>
+          <p><i class="bi bi-geo-alt-fill"></i>Address: Office, 7 Grafton Street, Dublin 2, D02 Y308</p>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.028060823102!2d-6.261559684009122!3d53.34275388268116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e9b9de04643%3A0xb767d2ec05c86f4b!2sOFFICE!5e0!3m2!1sen!2sie!4v1639179565222!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </section>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br>
    
-
-  </div>
     <footer>
-     <p>hjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhj</p>
-    </footer>
+      <div class="row">
+        <div class="col">
+          <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+            <a href="#">Sean O Riordain</a>.
+               </p>
+        </div>
+        <div class="col">
+          <a href="https://www.linkedin.com/in/sean-o-riordain/" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.instagram.com/seanoriordain18/" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://twitter.com/seanmoriordain" target="_blank"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100010043568744" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://github.com/sean-o-riordain" target="_blank"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
+     </footer>
+  </div>
+    
     <script src="script.js"></script>
   </body>
 </html>
-<!-- Modal, Carousel, Thumbnails-->
 
 
 
