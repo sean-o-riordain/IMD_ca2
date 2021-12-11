@@ -17,32 +17,32 @@
 
   <div class="sidebar">
     <header>
-      <h3>Sean O Riordain</h3>
+      <a href="#"><h3>Sean O Riordain</h3></a>
     </header>
     <nav id="navbar" class="navbar navbar-light bg-light px-3">
       <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" href="#splash">home</a>
+        <li class="nav-item w-100">
+          <a class="nav-link" href="#splash">Home</a>
         </li> 
-        <li class="nav-item">
+        <li class="nav-item w-100">
           <a class="nav-link" href="#aboutMe">About me</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item w-100">
           <a class="nav-link" href="#education">Education</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item w-100">
           <a class="nav-link" href="#workExp">Work Experience</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#portfolio">Portfolio</a>
+        <li class="nav-item w-100">
+          <a class="nav-link" href="#portfolio">Projects</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item w-100">
             <a class="nav-link" href="#skills">Skills</a>
           </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#interests">Hobbies and Interests</a>
+        <li class="nav-item w-100">
+          <a class="nav-link" href="#interests">Interests</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item w-100">
           <a class="nav-link" href="#contactMe">Contact me</a>
         </li>
       </ul>
@@ -55,47 +55,103 @@
       <div class="card mb-3">
         <img src="assets/Splash.jpg" class="card-img-top" id="SplashScreen">
         <div class="card-img-overlay align-items-center d-flex justify-content-center">
-          
           <div class="row container-fluid">
-            <h1>Sean O Riordain</h1>
-              <div class="typewriter">
-                <p>I'm a <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
-              </div>
-              <a href="https://www.linkedin.com/in/sean-o-riordain/" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.instagram.com/seanoriordain18/" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://twitter.com/seanmoriordain" target="_blank"><i class="bi bi-twitter"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=100010043568744" target="_blank"><i class="bi bi-facebook"></i></a>
-          <a href="https://github.com/sean-o-riordain" target="_blank"><i class="bi bi-github"></i></a>
-          <button type="button" class="btn btn-dark">Download.CV</button>
-          <button type="button" class="btn btn-dark">Contact Me</button>
             <div class="col">
-              
+              <h1 class="display-1">Sean O Riordain</h1>
+              <div class="typewriter">
+                <h3 class="text-muted display-6">I'm a <span class="typed-text"></span><span class="cursor">&nbsp;</span></h3>
+              </div>
+            </div>
+              <div class="col">
+                  <a href="https://www.linkedin.com/in/sean-o-riordain/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.instagram.com/seanoriordain18/" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://twitter.com/seanmoriordain" target="_blank"><i class="bi bi-twitter"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=100010043568744" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://github.com/sean-o-riordain" target="_blank"><i class="bi bi-github"></i></a>
+                <br><br><br>
+                <div  id="splashButton" class="row justify-content-center">
+                  <button type="button" class="btn btn-dark">Download.CV</button>
+                  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#contactMeModal">Contact Me</button>
+                </div>
+              </div>
 
-          </div>            
+          </div>
         </div>
       </div>
     </div>
+    <!--modal for contact me-->
+    <div class="modal fade" id="contactMeModal" tabindex="-1" aria-labelledby="contactmemodal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Contact Me</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col">
+              <div id="liveAlertPlaceholder"></div>
+              <div >
+                <label for="contactEmailInput" class="form-label">Email Address</label>
+                <input id="emailInput" type="email" class="form-control" value="">
+              </div>
+              <div >
+                <label for="contactSubjectInput" class="form-label">Subject</label>
+                <input id="subjectInput" type="textarea" class="form-control" value="">
+              </div>
+              <div >
+                <label for="contactMessageInput" class="form-label">Message</label>
+                <textarea id="messageInput" type="text" class="form-control" value=""></textarea>
+              </div>
+              <div class="g-recaptcha" data-sitekey="6Lfa4msdAAAAAJSJwXprOqy4aBe5PfZoQIU1ptTQ"></div>
+              <button class="btn btn-primary" type="button" id="liveAlertBtn" onclick="alert('message has been sent', 'success')">Send</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <br><br><br><br><br><br><br><br>
     
     <section id="aboutMe" class="topics">
-      <h4 >About me</h4>
+      <h1 >About me</h1>
 
       <div class="row">
         <div class="col">
-          <img src="./assets/img_avatar.png">
+          <img src="./assets/me.jpg">
         </div>
         <div class="col">
           <h2>Sean O Riordain</h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
-            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <p class="lead">I am an aspiring young developer with a problem-solving mindset seeking internship opportunities in software development, software testing and Devops. 
+            Highly motivated computing student who displays a willingness to learn and gain an understanding of today’s ICT environment. Interested in 
+            using my personal strengths such as teamwork, communication, technical and interpersonal skills to make a positive contribution to your organisation,
+            while also gaining valuable industry knowledge.</p>
 
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
-            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <p class="lead">I am quite outgoing and extroverted. Always willing to put in 100% into everything I try. I can usually be found at the cinema or a mueseum. 
+            Either way I will usually have a camera on me ready to shoot the first thing that catches my eye.</p>
+            <br><br>
+          <p id="quote"><em>"I may not have all the answers, <br>but I do know the questions you no longer need answers for"</em><br>     
+             - Robert J. Braathe</p>
+             <br>
+          <div class="row">
+            <div class="col">            
+              <ul>
+                <li><strong>Birthday</strong>: January 14th 2000</li>
+                <li><strong>Email</strong>: <a href="mailto:seanoriordain002@gmail.com" target="_blank">seanoriordain002@gmail.com<a>   <a href="mailto:seanoriordain002@gmail.com"></a></li>
+                <li><strong>Address</strong>: Office, 7 Grafton Street, Dublin 2, D02 Y308</li>
+                <li><div id="myTime"></div></li>
+              </ul>
+          </div>            
+          <div class="col">
+            <ul>
+              <li><strong>Age</strong>: 21</li>
+              <li><strong>Phone</strong>: 01 345 6789</li>
+              <li><strong>Degree</strong>: Bachelor of Science (Honours) in Computing with Software Development</li>
+              <li><div id="yourTime" class="inline"></div></li>
+            </ul>
+          </div> 
         </div>
+      </div>
       </div>    
       </section>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -107,6 +163,7 @@
         <img src="assets/TUDublin_Colour_RGB.jpg" alt="TUDLogo" class="img-thumbnail">
       </div>
       <div class="col">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2384.9136084328593!2d-6.365643784010556!3d53.29108258655004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670b4b8ec071f5%3A0xb6cf7501e0d9522a!2sTU%20Dublin%2C%20Tallaght!5e0!3m2!1sen!2sie!4v1639179677259!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
          <p>dsdsdhjkaaaaaaaaaaa</p> 
       </div>
       <div class="col">  
@@ -223,7 +280,8 @@
         <img src="assets/ColChill.jpg" alt="TUDLogo" class="img-thumbnail">
       </div>
       <div class="col">
-           <p>dsdsdhjkaaaaaaaaaaa</p> 
+           <p>dsdsdhjkaaaaaaaaaaa</p>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2383.109556427176!2d-6.4044917840097!3d53.323391684131245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48677341c1b79771%3A0xfd4c1e008e64c9f8!2sCol%C3%A1iste%20Chilliain!5e0!3m2!1sen!2sie!4v1639179701938!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="col">  
           <div class="accordion" id="secondaryResults">
@@ -299,12 +357,15 @@
       <div class="tab-content" id="workExpTabContent">
         <div class="tab-pane fade show active" id="fidelity" role="tabpanel" aria-labelledby="fidelity-tab">
           <img src="./assets/fidelity-logo-jpg.jpg" alt="Fidelity">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2384.7554182692274!2d-6.428951684010492!3d53.293916186337896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4867747d4846dd77%3A0x6160a4ba35aa496b!2sFidelity%20Investments%20Ireland!5e0!3m2!1sen!2sie!4v1639179782241!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="tab-pane fade" id="supervalu" role="tabpanel" aria-labelledby="supervalu-tab">
           <img src="./assets/Supervalu.png" alt="supervalu">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.1744341683857!2d-6.392505784010741!3d53.28641028689972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486774bf1586ee29%3A0x216398b68f70441!2sJordan&#39;s%20SuperValu%20Fortunestown!5e0!3m2!1sen!2sie!4v1639179865977!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="tab-pane fade" id="burgerKing" role="tabpanel" aria-labelledby="burgerKing-tab">
           <img src="./assets/burger_king.jpg" alt="burger_king">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38169.86542471414!2d-6.523496720898451!3d53.2784891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48677698865b4e37%3A0xc2d090a5c18c70ba!2sBurger%20King!5e0!3m2!1sen!2sie!4v1639179840127!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </section>
@@ -460,12 +521,12 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                <img src="assets/Photography.jfif" alt="Avatar" style="width:300px;height:300px;">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1>Photography</h1>
+                <p>Started getting into Photography when I was a teenager, have found it a great way to unwind</p>
+                <p>Have landed jobs doing Photography for plays and concerts</p>
               </div>
             </div>
           </div>
@@ -474,12 +535,12 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                <img src="assets/gaming.jpg" alt="Avatar" style="width:300px;height:300px;">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1>Video Games</h1>
+                <p>Have always loved playing games, some favourites being Pokemon and Sonic.</p>
+                <p>I was driven to start programming in the hopes of programming my own games.</p>
               </div>
             </div>
           </div>
@@ -488,12 +549,12 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                <img src="assets/cooking.jpg" alt="Avatar" style="width:300px;height:300px;">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1>Cooking</h1>
+                <p>Personally a big fan of cooking </p>
+                <p>Love trying out new recipes from around the globe, I have also taken to hosting dinner parties.</p>
               </div>
             </div>
           </div>
@@ -502,12 +563,12 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                <img src="assets/film.jfif" alt="Avatar" style="width:300px;height:300px;">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1>Film</h1>
+                <p>I'm a big movie buff, interested in all fascets of Film, from directing, acting and editing</p>
+                <p>Some of my favourites include Back to the Future, The Godfather and 12 Angry Men</p>
               </div>
             </div>
           </div>
@@ -516,12 +577,12 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                <img src="assets/gym.jfif" alt="Avatar" style="width:300px;height:300px;">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1>Exercise and The Gym</h1>
+                <p>I find it esential to go to the gym and exercise. Its a fantastic place to clear the mind.</p>
+                <p>One can usually find me in the gym after work most days.</p>
               </div>
             </div>
           </div>
@@ -530,12 +591,12 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                <img src="assets/coderdojo.png" alt="Avatar" style="width:300px;height:300px;">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1>Coder Dojo</h1>
+                <p>I volunteer at a local coder dojo. Coder Dojo is a service to help teach Coding to kids.</p>
+                <p>I actually started my coding journey in a coder dojo. I have volunteered there for 2 years now.</p>
               </div>
             </div>
           </div>
@@ -544,12 +605,12 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                <img src="assets/Art.jpg" alt="Avatar" style="width:300px;height:300px;">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1>Art</h1>
+                <p>While not a great artist myself, I am a great appreciator of Art.</p>
+                <p>On my free days I love going to Mueseums and just standing around for hours looking at art. My favourite artist is definetly Vincent Van Gogh</p>
               </div>
             </div>
           </div>
@@ -558,12 +619,11 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                <img src="assets/travel.jpg" alt="Avatar" style="width:300px;height:300px;">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1>Travel</h1>
+                <p>I love to travel and experiencing different cultures. By 30 it is my hope to have travel to every European Country. </p>
               </div>
             </div>
           </div>
@@ -572,12 +632,12 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                <img src="assets/books.jpg" alt="Avatar" style="width:300px;height:300px;">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1>Books</h1>
+                <p>I love spending free time reading books. I usually go for fiction (mainly Science Fiction and Fantasy), but have recently found myself reading more books about Programming.</p>
+                <p>My favourite author has to be Ray bradnury, I love his novel Farhenheit 451</p>
               </div>
             </div>
           </div>
@@ -586,12 +646,13 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                <img src="assets/muisc.jfif" alt="Avatar" style="width:300px;height:300px;">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1>Music</h1>
+                <p>I love music and love live music. I used to play the piano quite regularly.</p>
+                <p>I am the Photographer for two bands, which is great because it means I get free tickets.</p>
+                <p> My favourite artist is Billy Joel. I was lucky enough to get to see him perform</p>
               </div>
             </div>
           </div>
@@ -601,7 +662,7 @@
      
       
     </section>
-    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     
     <section id="contactMe" class="topics">
       <h4 >Contact me</h4>
@@ -631,13 +692,13 @@
           <a href="https://github.com/sean-o-riordain" target="_blank"><i class="bi bi-github"></i></a>
           <br><br>
           <p>Email: <a href="mailto:seanoriordain002@gmail.com" target="_blank">seanoriordain002@gmail.com<a>   <a href="mailto:seanoriordain002@gmail.com"><i class="bi bi-envelope"></i></a></p>
-          <p>Address: <br> 13 FakeStreet Grove, <br> Tallaght, <br> Dublin 24</p>
+          <p>Address: Office, 7 Grafton Street, Dublin 2, D02 Y308</p>
           <p>Tel: 01 345 6789</p>
-         
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.028060823102!2d-6.261559684009122!3d53.34275388268116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e9b9de04643%3A0xb767d2ec05c86f4b!2sOFFICE!5e0!3m2!1sen!2sie!4v1639179565222!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </section>
-    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
    
 
   </div>

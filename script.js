@@ -69,3 +69,48 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
   if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
+
+
+function Time() {
+  
+  var date = new Date();
+  var myDate = new Date();
+  var timeZoneOffeset = date.getTimezoneOffset();
+  myDate.setMinutes(myDate.getMinutes() + timeZoneOffeset);
+  
+  
+  // Get current hour
+  var hour = date.getHours();
+  var myHour = myDate.getHours();
+  // Get current minute
+  var minute = date.getMinutes();
+  var myMinute = myDate.getMinutes();
+  // Get current second
+  var second = date.getSeconds();
+  var mySecond = myDate.getSeconds();
+
+  // Updating hour, minute, and second
+  // if they are less than 10
+  hour = update(hour);
+  myHour = update(myHour);
+  minute = update(minute);
+  myMinute = update(myMinute);
+  second = update(second);
+  mySecond = update(mySecond);
+  // Adding time elements to the div
+  document.getElementById("yourTime").innerHTML= "<strong>Your Local Time:</strong> " +hour + " : " + minute + " : " + second;
+  document.getElementById("myTime").innerHTML = "<strong>My Local Time</strong>: " + myHour +" : "+myMinute+" : "+mySecond
+  // Set Timer to 1 sec (1000 ms)
+  setTimeout(Time, 1000);
+ }
+  // Function to update time elements if they are less than 10
+  // Append 0 before time elements if they are less than 10
+ function update(t) {
+  if (t < 10) {
+  return "0" + t;
+  }
+  else {
+  return t;
+  }
+ }
+ Time();
